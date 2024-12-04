@@ -1,0 +1,59 @@
+name: Update Age in HTML
+
+on:
+  schedule:
+    # Ausführung jedes Jahr am 22. Januar um 00:00 UTC
+    - cron: '0 0 22 1 *'
+
+jobs:
+  update-number:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Code auschecken
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    # Zahl in der HTML-Datei aktualisieren
+    - name: Increment Age in HTML
+      id: update
+      run: |
+        file="index.html"
+        if [[ -f "$file" ]]; then
+          # Sucht nach "I'm <number> years old" und erhöht die Zahl um 1
+          sed -i -E 's/(I'\''m )([0-9]+)( years old)/echo "\1$((\2 + 1))\3"/e' "$file"
+          echo "Updated number in $file."
+        else
+          echo "File $file not found!"
+          exit 1
+        fi
+
+    # Änderungen committen
+    - name: Commit Changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add index.html
+        git commit -m "Update number in HTML file"
+
+    # Neuen Branch erstellen und Änderungen pushen
+    - name: Push Changes to New Branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        BRANCH_NAME="update-age-$(date +%Y)"
+        git checkout -b "$BRANCH_NAME"
+        git push origin "$BRANCH_NAME"
+
+    # Merge Request erstellen
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref_name }}
+        commit-message: "Update number in HTML file"
+        title: "Increment age in HTML"
+        body: "This pull request updates the age in the HTML file by 1."
+        base: main
