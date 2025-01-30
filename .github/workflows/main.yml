@@ -1,6 +1,7 @@
 name: Update Age in HTML
 
 on:
+  workflow_dispatch:
   schedule:
     # Ausführung jedes Jahr am 22. Januar um 00:00 UTC
     - cron: '0 0 22 1 *'
