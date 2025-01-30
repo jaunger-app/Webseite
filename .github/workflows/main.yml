@@ -32,7 +32,7 @@ jobs:
     # Änderungen committen
     - name: Commit Changes
       env:
-        GITHUB_TOKEN: ${{ CI_AGE_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.CI_AGE_TOKEN }}
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
