@@ -43,7 +43,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        BRANCH_NAME="update-age-$(date +%Y)"
+        BRANCH_NAME="update-age"
         git checkout -b "$BRANCH_NAME"
         git push origin "$BRANCH_NAME"
 
