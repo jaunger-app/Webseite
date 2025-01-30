@@ -5,7 +5,10 @@ on:
   schedule:
     # Ausführung jedes Jahr am 22. Januar um 00:00 UTC
     - cron: '0 0 22 1 *'
-
+permissions:
+  contents: write
+  pull-requests: write
+  
 jobs:
   update-number:
     runs-on: ubuntu-latest
