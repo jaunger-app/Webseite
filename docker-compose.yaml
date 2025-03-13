@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd:latest 
+    container_name: apache-server
+    ports:
+      - "90:80"  # Verbindet Port 90 des Hosts mit Port 80 des Containers
+    volumes:
+      - /home/raspi/website:/usr/local/apache2/htdocs
+    restart: unless-stopped
