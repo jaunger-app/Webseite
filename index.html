@@ -1,312 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Jan Unger</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Jan Unger</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Jan Unger</h1>
-        <p class="section__text__p2">It Specialist</p>
-        <div class="btn-container">
-  
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/jaunger-app'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Java, Docker and Linux</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>School<br /></p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Hey, I'm Jan. I'm 17 years old and currently in the second year of my training.
-
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Programming Languages</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C#</h3>
-                  <p>basic</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Linux</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Docker</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Ansible</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/Homeflix.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Homeflix</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jaunger-app/Homeflix'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/JDA.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Easy Java Discord API</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jaunger-app/discord.easy'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/Website.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">This Website</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jaunger-app/website'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="https://discord.com/users/652033110099361802">Discord</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Jan Unger. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>About Me – Jaunger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0e5ec 0%, #f5f6fa 100%);
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .container {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.8);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px 0 #a3b1c6aa;
+      padding: 2.5rem 3rem;
+      max-width: 700px;
+      width: 95vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 16px 0 #d1d9e6aa;
+      margin-bottom: 1.2rem;
+      border: 4px solid #f5f6fa;
+      background: #e0e5ec;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      color: #222;
+      text-shadow: 0 2px 8px #fff8;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .about {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+    .projects-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #222;
+      letter-spacing: 0.5px;
+    }
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      width: 100%;
+    }
+    .project-card {
+      background: #f7f8fa;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px 0 #d1d9e6aa;
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card:hover {
+      box-shadow: 0 8px 32px 0 #b0b8c9cc;
+      transform: translateY(-4px) scale(1.04);
+    }
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e0e5ec 0%, #f5f6fa 100%);
+      box-shadow: 0 2px 8px #cfd8dc88;
+      padding: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #333;
+    }
+    .project-desc {
+      font-size: 0.98rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 0.7rem;
+    }
+    .project-link {
+      font-size: 0.95rem;
+      color: #007aff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .project-link:hover {
+      color: #0051a8;
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.2rem 0.5rem;
+      }
+      .projects {
+        gap: 1rem;
+      }
+      .project-card {
+        width: 95vw;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="profile-pic" src="https://avatars.githubusercontent.com/u/86261346?s=400&u=cae5e77a42d33ccdc67f9aaf6d8bc84481b0d894&v=4" alt="Profile Picture">
+    <h1>Jaunger</h1>
+    <div class="subtitle">Linux Enthusiast • Developer • HomeServer Admin</div>
+    <div class="about">
+      Hi! I'm Jaunger, a passionate developer and self-hosting enthusiast. I love building robust, user-friendly solutions for my home server and sharing my projects with the community. My interests include automation, web development, and open-source software.
+    </div>
+    <div class="projects-title">My Projects</div>
+    <div class="projects">
+      <a class="project-card" href="https://github.com/jaunger-app/Webseite" target="_blank">
+        <span class="project-icon" style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);">🌐</span>
+        <div class="project-title">Personal Website</div>
+        <div class="project-desc">A modern, responsive homepage for my portfolio, blog, and contact info.</div>
+        <span class="project-link">Visit Site</span>
+      </a>
+      <a class="project-card" href="https://github.com/jaunger-app/Conf" target="_blank">
+        <span class="project-icon" style="background:linear-gradient(135deg,#f7971e 0%,#ffd200 100%);">⚙️</span>
+        <div class="project-title">Ansible Playbook</div>
+        <div class="project-desc">An Ansible Playbook to automate the installation of Docker and essential software for server management.</div>
+        <span class="project-link">Try Playbook</span>
+      </a>
+      <a class="project-card" href="https://hub.docker.com/repositories/jaunger" target="_blank">
+        <span class="project-icon" style="background:linear-gradient(135deg,#fa709a 0%,#fee140 100%);">🐳</span>
+        <div class="project-title">Docker Image</div>
+        <div class="project-desc">A collection of created Images for easy linting.</div>
+        <span class="project-link">Learn More</span>
+      </a>
+      <a class="project-card" href="https://docker.com" target="_blank">
+        <span class="project-icon" style="background:linear-gradient(135deg,#fa709a 0%,#fee140 100%);">🐳</span>
+        <div class="project-title">SChniepel</div>
+        <div class="project-desc">A collection of containerized services for easy deployment and management.</div>
+        <span class="project-link">Learn More</span>
+      </a>
+    </div>
+  </div>
+</div>
+<footer style="margin-top:2.5rem; text-align:center; color:#888; font-size:1rem; padding-bottom:1.5rem;">
+<div>
+  &copy; 2025 Jaunger &mdash; 
+  <a href="https://github.com/jaunger" target="_blank" style="color:#007aff;text-decoration:none;margin:0 0.5em;">GitHub</a>
+  <a href="https://twitter.com/jaunger" target="_blank" style="color:#007aff;text-decoration:none;margin:0 0.5em;">Twitter</a>
+  <a href="mailto:jaunger@example.com" style="color:#007aff;text-decoration:none;margin:0 0.5em;">Email</a>
+</div>
+</footer>
+</body>
 </html>
