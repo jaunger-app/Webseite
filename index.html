@@ -1,193 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Me – Jaunger</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jan Unger – jaunger.de</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: linear-gradient(135deg, #e0e5ec 0%, #f5f6fa 100%);
-      font-family: 'Inter', Arial, sans-serif;
+    :root {
+      --bg-color: #0d1117;
+      --text-color: #c9d1d9;
+      --card-bg: #161b22;
+      --accent-color: #58a6ff;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
       margin: 0;
-      min-height: 100vh;
-      color: #222;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
     }
-    .container {
-      margin-top: 3rem;
-      background: rgba(255,255,255,0.8);
-      border-radius: 32px;
-      box-shadow: 0 8px 32px 0 #a3b1c6aa;
-      padding: 2.5rem 3rem;
-      max-width: 700px;
-      width: 95vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    main {
+      flex: 1;
     }
-    .profile-pic {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 16px 0 #d1d9e6aa;
-      margin-bottom: 1.2rem;
-      border: 4px solid #f5f6fa;
-      background: #e0e5ec;
+    header {
+      background-color: #161b22;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-    h1 {
-      font-weight: 600;
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-      color: #222;
-      text-shadow: 0 2px 8px #fff8;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    .subtitle {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
+    header p {
+      color: #8b949e;
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
     }
-    .about {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 2.5rem;
-      text-align: center;
-      line-height: 1.6;
-      max-width: 500px;
-    }
-    .projects-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      color: #222;
-      letter-spacing: 0.5px;
-    }
-    .projects {
+    .projects, .friends {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
       justify-content: center;
-      width: 100%;
+      gap: 1.5rem;
     }
-    .project-card {
-      background: #f7f8fa;
-      border-radius: 24px;
-      box-shadow: 0 4px 16px 0 #d1d9e6aa;
-      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-      width: 200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.2s, transform 0.2s;
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      width: 300px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+    .card a {
+      color: var(--accent-color);
       text-decoration: none;
-      color: inherit;
-    }
-    .project-card:hover {
-      box-shadow: 0 8px 32px 0 #b0b8c9cc;
-      transform: translateY(-4px) scale(1.04);
-    }
-    .project-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #e0e5ec 0%, #f5f6fa 100%);
-      box-shadow: 0 2px 8px #cfd8dc88;
-      padding: 0.5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .project-title {
-      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      text-align: center;
-      color: #333;
     }
-    .project-desc {
-      font-size: 0.98rem;
-      color: #555;
-      text-align: center;
-      margin-bottom: 0.7rem;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
     }
-    .project-link {
-      font-size: 0.95rem;
-      color: #007aff;
+    .skill {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .friends .card p {
+      color: #8b949e;
+    }
+    .friends .card a {
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #161b22;
+      color: #8b949e;
+      margin-top: auto;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      color: var(--accent-color);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .project-link:hover {
-      color: #0051a8;
-      text-decoration: underline;
-    }
-    @media (max-width: 700px) {
-      .container {
-        padding: 1.2rem 0.5rem;
-      }
-      .projects {
-        gap: 1rem;
-      }
-      .project-card {
-        width: 95vw;
-        max-width: 320px;
-      }
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img class="profile-pic" src="https://avatars.githubusercontent.com/u/86261346?s=400&u=cae5e77a42d33ccdc67f9aaf6d8bc84481b0d894&v=4" alt="Profile Picture">
-    <h1>Jaunger</h1>
-    <div class="subtitle">Linux Enthusiast • Developer • HomeServer Admin</div>
-    <div class="about">
-      Hi! I'm Jaunger, a passionate developer and self-hosting enthusiast. I love building robust, user-friendly solutions for my home server and sharing my projects with the community. My interests include automation, web development, and open-source software.
+  <header>
+    <h1>Jan Unger</h1>
+    <p>Computer Science · Automation · Open Source</p>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I'm Jan Unger, a passionate developer focused on automation, and system architecture. I've built various projects using Docker, CI/CD pipelines, Raspberry Pi setups, and more. I love exploring new tools and building creative solutions to simplify complex processes.
+      </p>
+    </section>
+
+    <section class="projects" id="projects">
+      <!-- Projects will be loaded here -->
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jan Unger – All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/jaunger" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/jan-unger" target="_blank">LinkedIn</a>
+      <a href="mailto:kontakt@jaunger.de">Email</a>
     </div>
-    <div class="projects-title">My Projects</div>
-    <div class="projects">
-      <a class="project-card" href="https://github.com/jaunger-app/Webseite" target="_blank">
-        <span class="project-icon" style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);">🌐</span>
-        <div class="project-title">Personal Website</div>
-        <div class="project-desc">A modern, responsive homepage for my portfolio, blog, and contact info.</div>
-        <span class="project-link">Visit Site</span>
-      </a>
-      <a class="project-card" href="https://github.com/jaunger-app/Conf" target="_blank">
-        <span class="project-icon" style="background:linear-gradient(135deg,#f7971e 0%,#ffd200 100%);">⚙️</span>
-        <div class="project-title">Ansible Playbook</div>
-        <div class="project-desc">An Ansible Playbook to automate the installation of Docker and essential software for server management.</div>
-        <span class="project-link">Try Playbook</span>
-      </a>
-      <a class="project-card" href="https://hub.docker.com/repositories/jaunger" target="_blank">
-        <span class="project-icon" style="background:linear-gradient(135deg,#fa709a 0%,#fee140 100%);">🐳</span>
-        <div class="project-title">Docker Image</div>
-        <div class="project-desc">A collection of created Images for easy linting.</div>
-        <span class="project-link">Learn More</span>
-      </a>
-      <a class="project-card" href="https://docker.com" target="_blank">
-        <span class="project-icon" style="background:linear-gradient(135deg,#fa709a 0%,#fee140 100%);">🐳</span>
-        <div class="project-title">SChniepel</div>
-        <div class="project-desc">A collection of containerized services for easy deployment and management.</div>
-        <span class="project-link">Learn More</span>
-      </a>
-    </div>
-  </div>
-</div>
-<footer style="margin-top:2.5rem; text-align:center; color:#888; font-size:1rem; padding-bottom:1.5rem;">
-<div>
-  &copy; 2025 Jaunger &mdash; 
-  <a href="https://github.com/jaunger-app" target="_blank" style="color:#007aff;text-decoration:none;margin:0 0.5em;">GitHub</a>
-  <a href="https://x.com/jaunger_app" target="_blank" style="color:#007aff;text-decoration:none;margin:0 0.5em;">Twitter</a>
-  <a href="mailto:jaunger@example.com" style="color:#007aff;text-decoration:none;margin:0 0.5em;">Email</a>
-</div>
-</footer>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "My Docker Setup",
+        description: "A full-featured home server with Jellyfin, Sonarr, Radarr and more.",
+        url: "https://github.com/jaunger/docker-media-server"
+      },
+      {
+        title: "MQTT Sensor Monitor",
+        description: "Monitor temperature and motion sensors with Node-RED and InfluxDB.",
+        url: "https://github.com/jaunger/mqtt-sensor-monitor"
+      },
+      {
+        title: "Simple Messenger",
+        description: "A secure web messenger with end-to-end encryption.",
+        url: "https://github.com/jaunger/secure-messenger"
+      }
+    ];
+
+    const container = document.getElementById('projects');
+
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.url}" target="_blank">View Project →</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
 </body>
 </html>
